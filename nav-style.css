@@ -1,0 +1,23 @@
+ul.mynavi{
+	list-style-type: none;
+    	margin: 0;
+	padding: 0;
+    	overflow: hidden;
+    	background-color: #ffe6ff;
+}
+
+ul.mynavi li {
+    float: left;
+}
+
+ul.mynavi li a{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+ul.mynavi li a:hover {
+    background-color: #f0b3ff;
+}
