@@ -1,9 +1,9 @@
 ul.mynavi{
 	list-style-type: none;
-    	margin: 0;
+    margin: 0;
 	padding: 0;
-    	overflow: hidden;
-    	background-color: #ffe6ff;
+    overflow: hidden;
+    background-color: aliceblue; /* #ffe6ff; */
 }
 
 ul.mynavi li {
@@ -19,5 +19,5 @@ ul.mynavi li a{
 }
 
 ul.mynavi li a:hover {
-    background-color: #f0b3ff;
+    background-color: deepskyblue; /* #f0b3ff; */
 }

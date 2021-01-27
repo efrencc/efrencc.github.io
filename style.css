@@ -1,5 +1,5 @@
 body{
-	background-color:#fff7ff;
+	background-color: white;/* #fff7ff; */
 }
 
 a{
@@ -8,6 +8,12 @@ a{
 
 p{
 	font-size:110%;
+}
+
+.overdiv{
+    width: 60%;
+    margin: auto;
+    padding: 0px;
 }
 /*
 ul{
