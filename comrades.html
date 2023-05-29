@@ -6,8 +6,39 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href = "style.css" type = "text/css" rel = "stylesheet">
 <link href = "nav-style.css" type = "text/css" rel = "stylesheet">
-	<title>Comrades</title>
+	
+<style>
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+.card img {
+  width: 50%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.card .w3-large {
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<title>Comrades</title>
 </head>
+<!-- ##################################### -->
 <body>
 	<h1>Comrades</h1>
 
