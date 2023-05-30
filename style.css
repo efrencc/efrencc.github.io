@@ -90,3 +90,11 @@ p{
     padding: 0;
   }
 }
+
+@media screen and (max-width: 800px){
+  .overdiv{
+    width: 100%;
+    margin: auto;
+    padding: 0px;
+  }
+}
