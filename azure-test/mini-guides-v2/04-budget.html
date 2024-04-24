@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgets and Costs</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>Budgets and Costs</h1>
+    <p>It is extremely important, when using cloud services, to keep an eye on incurred charges and to set up a budget. There are some resources in Azure that will keep charging you even if you are not actively using them, which may result in unexpected costs. We recommend you erase any created resources that are easily replaceable and that you do not actively use. This will differ from resource to resource. For data storage, for example, you need to keep storing your data even if you are not actively using it. However, if you deploy a service like Azure AI Search, it will continuously charge you without you noticing and without having the need for it.</p>
+    <p>Let’s learn about Azure’s own service to help you manage costs: Cost Analysis and Budgets.</p>
+
+    <h2>Cost Analysis</h2>
+    <p>When you select a resource group, you will see a menu bar on the left (see Figure ##). Find the Cost Management subsection. There you will see different options, head to Cost Analysis. The Cost Analysis section has useful information on the charges you have incurred. The main graph shows the evolution of costs for a given period of time. You can change the period view in the options bar just above the graph. Below the graph you will also see costs split by services, location, and specific resources. This will help you track costs per resource, and identify any resource incurring costs that you are not using anymore. <b>We highly recommend you check Cost Analysis constantly</b>. In particular, after you have created a new resource you are not familiar with, check it every day to make sure there are no unexpected charges. To help you manage your costs, you can create different budgets. Let’s learn about them.</p>
+    <figure>
+        <img src="../images/cost-analysis.png" alt="Azure's Organization Tree" width = 600 height = auto>
+        <figcaption>Figure ##. (Left) Resource Group menu. Inside the red frame we highlight the Cost Management section, from where you can access Cost Analysis and Budget. (Right) The Cost Analysis view.</figcaption>
+    </figure>
+
+    <h2>Budget</h2>
+    <p>You can create budgets to help you track and manage costs. For that, head to the Budgets section under Cost Management. By default you won’t have any budget, so you can create one by clicking on the Add button. You can 1) specify the reset period, that is, if the budget is monthly, quarterly, or annual, 2) set the budget amount, and 3) set alert notifications for when you are close to reaching the budget (or have exceeded it). Note that a budget helps you get notifications and manage costs more effectively, however, it won’t stop the services automatically. You can still go over budget, this tool is very useful but it is more organizational than a fail-safe.</p>
+
+    <h2>Pricing</h2>
+    <p>Different Azure resources have different costs. Pricing changes by region. Note that some services are charged by the hour. For example, for Azure's AI Search, which is required if you want to use your own data using OpenAI resources, you will be charged hourly. In <a href="https://azure.microsoft.com/en-us/pricing/details/search/" target="_blank">this link</a> you will see a pricing table for Azure AI Search. Each resource has different pricing; hence, we recommend you search and look at the price tables before using a resource you are familiar with.</p>
+
+    <!-- Navigation -->
+    <div class="button-container">
+        <a href="./03-resources-and-resource-groups.html" class="button-left">&#11013; Go Back</a>
+        <a href="../index.html" class="button-center">Table of Contents</a>
+        <a href="./05a-openai-00.html" class="button-right">Next &#11157;</a>
+    </div>
+</body>
+</html>

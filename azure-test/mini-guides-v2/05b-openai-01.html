@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure OpenAI - Part 1</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>Azure OpenAI - Models, Regions and Quotas</h1>
+
+    <!-- Document Contents go here-->
+
+    <h2>Privacy and Security</h2>
+    <p>The GPT models available through Azure OpenAI are not hosted by OpenAI itself. That is, the information you send to Azure is not sent, processed, or collected by OpenAI (this is true as of <b>April, 2024</b>, it may change in the future).</p>
+
+    <h2>Regions</h2>
+    <p>You can choose the server region where you want to create your resource (for example, East US, West US, etc.). While ideally you would choose the closest region to your location, not all services are available in all regions. To see which models are available in which regions, follow <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models" target="_blank">this link</a>.</p>
+
+    <h2>Model Deployments</h2>
+    <p>When beginning to develop your own AI services within Azure AI using its AI services, you'll require a baseline model for deployment or fine-tuning. Azure offers a wide range of models to select from, whether you're initiating a chatbot with GPT, generating images from text using DALL-E, or converting speech to text or vice versa using Whisper. Azure Services provide various variants of each model, allowing for flexibility in choosing the most suitable option for your project.</p>
+
+    <table>
+        <tbody>
+            <tr>
+                <td><b>Models</b></td>
+                <td><b>Description</b></td>
+            </tr>
+            <tr>
+                <td>
+                    <b>GPT-4</b>
+                    <ul>
+                        <li>gpt-4</li>
+                        <li>gpt-4-32k</li>
+                    </ul>
+                </td>
+                <td>The newest models available from OpenAI. They can generate natural language and code.</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>GPT-3.5</b>
+                    <ul>
+                        <li>gpt-35-turbo</li>
+                        <li>gpt-35-turbo-16k</li>
+                        <li>gpt-35-turbo-instruct</li>
+                    </ul>
+                </td>
+                <td>A set of models that improve on GPT-3.5 and are optimized for chat. They generate natural language and code.</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Embeddings</b>
+                    <ul>
+                        <li>text-embedding-3-large</li>
+                        <li>text-embedding-3-small</li>
+                        <li>text-embedding-ada-002</li>
+                    </ul>
+                </td>
+                <td>Convert text into numerical vector form to facilitate text similarity.</td>
+            </tr>
+            <tr>
+                <td><b>DALL-E</b></td>
+                <td>Generate original images from natural language.</td>
+            </tr>
+            <tr>
+                <td><b>Whisper</b></td>
+                <td>Transcribe and translate speech to text.</td>
+            </tr>
+        </tbody>
+        <caption>Table ##. The left column shows the specific model implementations for different OpenAI models. The right column describes the corresponding model. Descriptions adapted from <a href="https://platform.openai.com/docs/models/overview" target="_blank">here</a>.</caption>
+    </table>
+
+    <p>For additiona details, see <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability" target="_blank">here</a></p>
+
+    <h2>Quotas</h2>
+    <p>For each model, there is a limit associated to it per region and per subscription. What this limit, or quota, means, depends on the model. For example, if you use GPT 3.5 turbo, the limit is in terms of “tokens per minute”, while if you select a DALL-E the limit is in terms of the number of concurrent requests. When you create a resource using a model, you select how much of the quota is assigned to that resource. You can assign all your quota of divide it into different resources/deployments. For example say I make a resource for GPT 3.5 Turbo in the East US region. My limit is 240K tokens per minute, and I assign 120K to this resource. If I create another resource in the same region and using the same model, I can only use 120K max. I could alternatively assign 60K and leave 60K to space for a possible third resource. To see the quota limits for different models and regions, see <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits" target="_blank">this table</a>.</p>
+
+    <p>If you want to see a list of the quota usage of all your resources, you can access it from the Azure OpenAI Studio. In the left menu, under Management, you will see the Quotas section. See Figure ##.</p>
+
+    <figure>
+        <img src="../images/quotas.png" alt="" width = 600 height = auto>
+        <figcaption>Figure ##. You can access your quotas from the navigation menu in Azure OpenAI Studio.</figcaption>
+    </figure>
+
+    <p>Now it's time to create your own resource!</p>
+
+
+    <!-- Navigation -->
+    <div class="button-container">
+        <a href="./05a-openai-00.html" class="button-left">&#11013; Go Back</a>
+        <a href="../index.html" class="button-center">Table of Contents</a>
+        <a href="./06-openai-02.html" class="button-right">Next &#11157;</a>
+    </div>
+</body>
+</html>

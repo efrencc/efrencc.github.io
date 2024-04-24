@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigating the Azure Interface</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>Navigating the Azure Interface</h1>
+
+    <!-- Document Contents go here-->
+    <h2>Home</h2>
+    <p>Let’s take a few minutes to get familiarized with Azure’s online portal and organization.</p>
+
+    <p>When you log in, you should encounter the <b>Home</b> page (see Figure ##). If you ever get lost in the Azure maze, click on the triple bar on the top left and select Home to get back here. By the way, that triple bar button opens the <b>portal menu</b>. Remember that’s what it is called because we will mention it again.</p>
+
+    <figure>
+        <img src="../images/home-screen.png" alt="" width = 600 height = auto>
+        <figcaption>Figure ##. The Home screen of the Azure’s portal. The navigation menu, or portal menu, is accessed through the triple bar button on the top left.</figcaption>
+    </figure>
+
+    <p>Do not mistake Home for the Dashboard. A few words about dashboards are found at the end of this mini guide.</p>
+
+    <p>Home is divided into different sections; the two top ones are Azure Services and Resources. Under Azure Services you will find several options: All Resources, Subscriptions, Resource Groups, Cost Analysis, etc. Under Resources you will find a list of all the resources in that particular Azure subscription (which should be empty if you haven’t created any resource). This is a lot, let’s untangle them one by one:</p>
+
+    <h2>Accounts and Subscriptions</h2>
+    <p>By now you already have an azure account. This is likely your personal account and it is linked to your Northwestern email. Under your account, you may have different subscriptions. Each subscription has its own settings and set of services it can access. The main reason you would have different subscriptions is for management and billing purposes. Likely, you will only have one subscription.</p>
+
+    <h2>Adding Others to your Subscription</h2>
+    <p>To add others user to your subscriptions you will need to navigate to your subscription.</p>
+    <ol>
+        <li>At the Azure portal, select <b>Subscriptions</b>.</li>
+        <li>Select the subscription you want to assign and then select <b>Access Control</b>.</li>
+        <li>Select <b>Add</b> Role Assignment.</li>
+        <li>Select a <b>Role</b> you would like the user to have. (For a list of pre-built roles, see <a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles" target="_blank">here</a>)</li>
+        <li>In the <b>Member</b> tab you select which user get what roles with the subscription.</li>
+    </ol>
+
+    <h2>Resource Groups and Resources</h2>
+    <p>The core of Azure are the resources. These are specific instances you create of Azure’s different services: AI implementations, databases, networks, virtual machines, etc. Resources can be organized into groups. These are called Resource Groups and serve as an organization device. You can, for example, set up different budgets for different resource groups. Figure ## shows a visualization of how all of these are organized. This figure is taken from Azure’s own learning materials, <a href="https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/" target="_blank">here</a>.</p>
+
+    <figure>
+        <img src="../images/azure-organization.png" alt="" width = 600 height = auto>
+        <figcaption>Figure ##. Azure’s overall organization. Figure taken from Microsoft Learn, <a href="https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/" target="_blank">here</a>.</figcaption>
+    </figure>
+
+    <p>Great. Now you know basic navigation in the Azure portal and the organization of resources. To start actually using Azure’s services, we need to learn a bit more about resources and cost management. We will head there next.</p>
+
+    <h2>Dashboards</h2>
+    <p>The Dashboard is not your home, it is on a different page and is basically a place to view your Azure resources and applications from different perspectives. You can have multiple dashboards. At the beginning there is one default dashboard without much in it: a list of resources and of guides. However, you can create personalized dashboards summarizing different elements of your Azure subscription. Azure provides some handy pre-made dashboards: one showing an inventory of all resources accompanied with some statistics about them, one to track different applications, one to track SQL databases, etc.</p>
+
+    <figure>
+        <img src="../images/" alt="" width = 400 height = auto>
+        <figcaption>Figure ##.</figcaption>
+    </figure>
+
+
+    <!-- Navigation -->
+    <div class="button-container">
+        <a href="01-cloud-concepts.html" class="button-left">&#11013; Go Back</a>
+        <a href="../index.html" class="button-center">Table of Contents</a>
+        <a href="03-resources-and-resource-groups.html" class="button-right">Next &#11157;</a>
+    </div>
+</body>
+</html>

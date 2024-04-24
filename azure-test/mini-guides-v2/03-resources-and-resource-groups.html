@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources and Resource Groups</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>Resources and Resource Groups</h1>
+
+    <h2>What Are Resources?</h2>
+
+    <!-- Document Contents go here-->
+    <p>Resources in Azure are any services you use or provisioned within the Azure platform. Anytime you create/provision a resource it will be placed with the desired Resource Group that serves as a logical organization management. Remember the overall Azure organization:</p>
+
+    <figure>
+        <img src="../images/azure-organization.png" alt="" width = 600 height = auto>
+        <figcaption>Figure ##. Azure’s overall organization. Figure taken from Microsoft Learn, <a href="https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/" target="_blank">here</a>.</figcaption>
+    </figure>
+
+    <p>Resources can be of different types, the main ones being compute, storage, databases, and AI services. Here are a few examples of resources within Azure according to type:</p>
+
+    <ol>
+        <li><b>Compute</b></li>
+        <ul>
+            <li>VMs (Virtual Machines)</li>
+            <li>Containers</li>
+            <li>Serverless Functions</li>
+        </ul>
+
+        <li><b>Storage</b></li>
+        <ul>
+            <li>Blob Storage</li>
+            <li>Azure Files</li>
+            <li>Azure Data Lakes</li>
+        </ul>
+
+        <li><b>Databases</b></li>
+        <ul>
+            <li>Azure SQL DB</li>
+            <li>Cosmos DB</li>
+        </ul>
+
+        <li><b>AI and Machine Learning</b></li>
+        <ul>
+            <li>Azure Cognitive Services</li>
+            <li>Azure OpenAI</li>
+        </ul>
+    </ol>
+
+    <p>We will now show you how to create a resource group step by step. The specific process may change if Azure's interface gets updated, but the principle is the same.</p>
+
+    <h2>Creating an Azure Resource Group</h2>
+    <ol>
+        <li>Open the “Resource Groups” Services</li>
+        <figure>
+            <img src="../images/resource-instructions-01.png" alt="" width = 400 height = auto>
+        </figure>
+        <li>Once on the Resource group page click “+Create”</li>
+        <figure>
+            <img src="../images/resource-instructions-02.png" alt="" width = 400 height = auto>
+        </figure>
+        <li>Enter project details. It will ask you for subscription, resource group name, and region. Below is a description of these:
+            <ol type="a">
+                <li>Subscription: The subscription in which you want to build the resource group. This sets which subscription gets billed.</li>
+                <li>Resource Group: Create a name for this resource group.</li>
+                <li>Region: Select a region where you want this resource group to be placed. (Not all regions have access to all services.)</li>
+            </ol>
+        </li>
+        <figure>
+            <img src="../images/resource-instructions-03.png" alt="" width = 400 height = auto>
+        </figure>
+        <li>(Optional) add Tag/s to help with Organization. A tag is useful for organization as you can group resources with Tags.</li>
+        <figure>
+            <img src="../images/resource-instructions-04.png" alt="" width = 400 height = auto>
+        </figure>
+        <li>Review your resource group creation and Press “Create”.</li>
+        <figure>
+            <img src="../images/resource-instructions-05.png" alt="" width = 400 height = auto>
+        </figure>
+    </ol>
+
+    <p>Now anytime you want to create / Request a service you can select a specific resource group to help manage.</p>
+
+    <h2>Roles</h2>
+    <p>In Azure, roles define permissions for accessing and managing Azure resources. Roles are crucial for maintaining security and governance within an Azure environment by controlling who can perform specific actions on resources. Azure provides several built-in roles with predefined sets of permissions, such as Owner, Contributor, and Reader, covering a wide range of responsibilities from full control to read-only access. Additionally, custom roles can be created to tailor permissions according to specific organizational requirements.</p>
+
+
+    <!-- Navigation -->
+    <div class="button-container">
+        <a href="./02-the-azure-interface.html" class="button-left">&#11013; Go Back</a>
+        <a href="../index.html" class="button-center">Table of Contents</a>
+        <a href="./04-budget.html" class="button-right">Next &#11157;</a>
+    </div>
+</body>
+</html>

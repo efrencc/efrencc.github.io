@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure's Guide - RAG - 01</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>Retrieval-Augmented Generation (RAG) - Part 1</h1>
+
+    <!-- Document Contents go here-->
+
+    <h2>Use your own data</h2>
+    <p>Retrieval-Augmented Generation (RAG) is the process through which external data sources can be used to inform the context of an OpenAI generative model. For example, if you have a chat bot implementation, you can add a series of websites through RAG and it will be able to answer questions about those websites. The same can be done with a collection of academic papers, reports, interviews, etc. The key aspect of RAG is that it does not re-train the large language model (LLM) you are using (we'll talk about that in the fine-tuning mini-guide). Instead, it searches for important information in your data and appends it to the prompt submitted to the LLM.</p>
+    <p>To add retrieval-augmented generation to our deployments, we are required to have other resources at play. In particular, you need the help of Azure AI Search and, potentially, Azure Storage.</p>
+
+    <h2>Why is Azure AI Search Needed for RAG? </h2>
+    <p>Large language models can only hold a limited amount of information "in context" before generating an answer. You can think of this as the working memory capacity of your chat bot. If you have interacted with ChatGPT, for example, this is the total size a conversation can have (approximately). This information is counted in "tokens", which roughly correspond to individual words and special symbols. Each model has a token quota limit (see section on quotas on mini-guide ##). During RAG, the objective is for the LLM to interact with your data, but your data can be much much larger than the limit of tokens the LLM can handle! To solve this issue, an intermediary search process is used. This process accesses your data, finds the relevant information, and adds this as part of the prompt given to your LLM. This is what Azure AI Search does. Let's look into it now.</p>
+
+    <h2>Azure AI Search</h2>
+    <p><a href="https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search" target="_blank">Azure AI Search</a>, formerly known as Azure Cognitive Search, provides a secure form of information retrieval from your own data sources. Once information is obtained, it can be used for a variety of applications, including generative AI. Common application scenarios include document search, data exploration, and chat bots.</p>
+    <p>Azure’s AI Search works by searching your own data sources and creating an "index" out of them. What this does is it structures all the raw text input from your data into a form that can be later queried by another process and extract useful information. For example, if you are using retrieval-augmented generation (RAG) with an OpenAI resource, you cannot input a huge text to the chatbot. Instead, Azure’s AI search is used to create amenable versions of your data that can then be fed to the chatbot. This is why to use RAG in and Azure OpenAI resource, you must first create an AI Search resource.</p>
+    <p>AI Search is composed of two stages: indexing and querying. Indexing refers to the process of converting raw text data into a collection of structured, searchable documents (these are called indexes). Querying extracts information from the indexes and sends it to other resources (in the example above, to your OpenAI resource). Indexing and querying come with base functionalities, but you can add extra functionalities if desired. For indexing, these extra functionalities are called “skills" and the process called AI enrichment. Some examples are language detection and translation, sentiment analysis, and optical character recognition. You can learn more <a href="https://learn.microsoft.com/en-us/azure/search/cognitive-search-concept-intro" target="_blank">here</a>. For querying the most important extra feature would be <a href="https://learn.microsoft.com/en-us/azure/search/semantic-search-overview" target="_blank">semantic ranking</a>, which re-ranks your results according to context (for example Capital has different meaning if we are talking about geography vs finance). Please note that these extra features also incur an <b>extra cost</b>.</p>
+    <p>The overall dynamics of AI Search are shown in Figure ##. </p>
+
+    <figure>
+        <img src="../images/azure-ai-search.png" alt="" width = 600 height = auto>
+        <figcaption>Figure ##. Diagram illustrating Azure AI Search. Indexing is the process of structuring your data into searchable format. Querying is the actual search, which outputs relevant data to your app or OpenAI resource. Image taken from Azure's documentation, <a href="https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search" target="_blank">here</a></figcaption>
+    </figure>
+
+    <h2>Vocabulary</h2>
+    <p><b>Indexing:</b> Indexing involves the process of ingesting and organizing content into the search service, enabling efficient and accurate searching. It transforms raw data into a structured format that can be easily searched and retrieved.</p>
+    <p><b>AI Enrichment:</b> Augments indexing by employing advanced AI methods to extract insights from content, including OCR, image description, text translation, and other skills that enhance content understanding and relevance.</p>
+    <p><b>Querying:</b> Querying occurs when a client application submits search requests to the Azure AI Search service. The service processes these queries against the indexed content and returns relevant results based on the search criteria provided by the user.</p>
+    <p><b>Semantic Ranking:</b> Utilizes Natural Language Processing to analyze query and document semantics, boosting relevant results to the top of search pages.</p>
+    <p><b>Vector:</b> Is a mathematical representation of data points or documents in a high-dimensional space. It encodes various features or characteristics, facilitating tasks like similarity analysis and classification.</p>
+
+    <p>In terms of where Azure AI Search Sits in your In OpenAI resource: it sits between your External Data stores that contains your un-indexed data and the application you are creating.</p>
+
+    <h2>Azure Blob Storage</h2>
+    <p>Azure Blob Storage is a cloud-based object storage service provided by Microsoft Azure. It's designed to store massive amounts of unstructured data, such as text or binary data, and is highly scalable, durable, and accessible. Azure Blob can store text, images, videos, documents and more.</p>
+    <p>Blob: Binary Large Object, refers to any data that is stored in a in Azure Blob.</p>
+    <p>Container: Blob storage organizes blobs into containers, which act as a way to group related blobs together. Containers are similar to directories or folders in a file system. Each container can hold an unlimited number of blobs.</p>
+
+    <figure>
+        <img src="../images/storage.jpg" alt="" width = 200 height = auto>
+        <figcaption>Figure ##.</figcaption>
+    </figure>
+
+    <!-- Navigation -->
+    <div class="button-container">
+        <a href="./06-openai-02.html" class="button-left">&#11013; Go Back</a>
+        <a href="../index.html" class="button-center">Table of Contents</a>
+        <a href="../index.html" class="button-right">Next &#11157;</a>
+    </div>
+</body>
+</html>

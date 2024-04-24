@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Guide - Create Your First OpenAI Resource</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <h1>Azure OpenAI - Create Your First OpenAI Resource</h1>
+
+    <!-- Document Contents go here-->
+    <p>To create a resource click on the “Create a Resource” button in Azure’s Home. You will notice this sends you to the marketplace. Type "openai" in the search bar, the first result should be the Azure OpenAI option (see Figure ##).</p>
+
+    <figure>
+        <img src="../images/marketplace.png" alt="" width = 400 height = auto>
+        <figcaption>Figure ##.</figcaption>
+    </figure>
+
+    <p>Click “Create" and fill in the fields accordingly. You may not be familiar with the second step, on network security, below we explain what it means.</p>
+
+    <h2>Network Security</h2>
+    <p>When you create an OpenAI Resource it will prompt you to configure the network for your Azure AI Services. For a detail explanation of utilizing Virtual Networks and OpenAi Service follow the following <a href="https://learn.microsoft.com/en-us/azure/ai-services/cognitive-services-virtual-networks?tabs=portal" target="_blank">link</a> (see Figure ##).</p>
+
+    <figure>
+        <img src="../images/network-security.png" alt="" width = 400 height = auto>
+        <figcaption>Figure ##. When creating an OpenAI resource, you must indicate the network security level.</figcaption>
+    </figure>
+
+    <p>You have 3 choices:</p>
+
+    <ol>
+        <li><strong>All networks:</strong></li>
+        <ul>
+            <li>This allows access to your resources from anywhere over the internet.</li>
+        </ul>
+        <li><strong>Selected networks:</strong></li>
+        <ul>
+            <li>Here you can select or create a Virtual network which is a range of IP addresses and associated services that are within that range of IP addresses.</li>
+            <li>Selecting this option means that your Azure AI Service will only be allowed to communicate to other endpoints that are within the same Virtual Network.</li>
+            <li>To learn more about the importance of Virtual Networks and additional details see this <a href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview" target="_blank">link</a>.</li>
+        </ul>
+        <li><strong>Disabled:</strong></li>
+        <ul>
+            <li>Blocks all network access to your resource except for connections made from a chosen private endpoint.</li>
+            <li>You would use this option if you wanted to have a specific endpoint be the only one allowed to communicate to your AI Service.</li>
+        </ul>
+    </ol>
+
+    <h2>Deploy a Model</h2>
+
+    <p>Once your resource is created. Click on “Go to Resource”, which will send you to the resource’s overview page. Here you should see a prominent option titled “Explore and Deploy” with a link sending you to <b>Azure OpenAI Studio</b>. The Azure OpenAI studio has a different interface than the Azure portal. Here you will find the option to create a new deployment, and now it’s up to you to choose whichever model best fits your needs (GPT 3.5, GPT 4, etc.). Refer to Table ## in the previous guide if needed. As explained before, there are three main types of text resources: chat, completions, and embeddings. In these mini-guides we will focus on chat. We will talk about retrieval-augmented generation (RAG), using the API, and fine tuning. Before continuing, we encourage you to deploy a basic chatbot and explore its functionality in OpenAI Studio.</p>
+
+    <!-- Navigation -->
+    <div class="button-container">
+        <a href="./05b-openai-01.html" class="button-left">&#11013; Go Back</a>
+        <a href="../index.html" class="button-center">Table of Contents</a>
+        <a href="./07-openai-03.html" class="button-right">Next &#11157;</a>
+    </div>
+</body>
+</html>
