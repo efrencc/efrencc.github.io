@@ -1,0 +1,116 @@
+/* styles.css */
+figure {
+    margin: 1em 0;
+    padding: 0;
+    text-align: center;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: #5b3082;
+    /* text-shadow: 3px 3px 1px black; */
+  }
+  
+body {
+    width: 800px;
+    margin: 0 auto;
+    background-color: hsl(0, 0%, 100%);
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+  }
+
+html {
+    background-color: #B6ACD1;
+  }
+
+p {
+    font-size: 20px;
+}
+
+ol{
+    font-size: 20px;
+}
+
+
+/* Styles for the table of contents */
+#table-of-contents {
+    margin: 2em auto;
+    padding: 0;
+    width: 80%;
+    text-align: left;
+    font-size: 20px;
+}
+
+#table-of-contents ul {
+    padding: 1;
+}
+
+#table-of-contents li {
+    margin-bottom: 0.5em;
+    /* Add spacing between bullet points */
+    padding-left: 20px; /* Adjust as needed */
+}
+
+#table-of-contens ul ul li {
+    margin-left: 20px; /* Adjust spacing for nested lists */
+}
+
+
+
+/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2em auto;
+    width: 80%;
+}
+
+.button-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color for buttons */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.button-left {
+    float: left;
+}
+
+.button-center {
+    margin: 0 auto; /* Center horizontally */
+}
+
+.button-right {
+    float: right;
+}
+
+
+/* Style for tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+table td:first-child {
+    width: 40%; /* Set the width of the first column to 50% of the table width */
+}
+
+table td:last-child {
+    width: 60%; /* Set the width of the last column to 50% of the table width */
+}
